@@ -1,0 +1,20 @@
+# Plateformes supportées pour le financement
+
+github: [votre_nom_utilisateur_github] # Ajoutez votre nom GitHub pour GitHub Sponsors
+patreon: votre_nom_utilisateur_patreon # Ajoutez votre nom Patreon
+open_collective: votre_nom_utilisateur_open_collective # Ajoutez votre nom Open Collective
+ko_fi: votre_nom_utilisateur_ko_fi # Ajoutez votre nom Ko-fi
+tidelift: npm/nom_de_votre_package # Exemple : npm/babel
+community_bridge: votre_projet_community_bridge # Ajoutez le nom de votre projet sur Community Bridge
+liberapay: votre_nom_utilisateur_liberapay # Ajoutez votre nom Liberapay
+issuehunt: votre_nom_utilisateur_issuehunt # Ajoutez votre nom IssueHunt
+lfx_crowdfunding: votre_projet_lfx_crowdfunding # Ajoutez le nom de votre projet sur LFX Crowdfunding
+polar: votre_nom_utilisateur_polar # Ajoutez votre nom Polar
+buy_me_a_coffee: votre_nom_utilisateur_buy_me_a_coffee # Ajoutez votre nom Buy Me a Coffee
+thanks_dev: votre_nom_utilisateur_thanks_dev # Ajoutez votre nom thanks.dev
+
+# URLs personnalisées (jusqu'à 4 liens)
+custom:
+  - https://paypal.me/votre_lien_paypal
+  - https://example.com/votre_site_perso
+  - https://buymeacoffee.com/votre_nom
