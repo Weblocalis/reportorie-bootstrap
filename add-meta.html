@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification Balise Viewport</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Vérification de la balise Viewport</h1>
+        <div id="file-table" class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Chemin du Fichier</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="file-list"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Charger les fichiers HTML et leur statut
+        function loadFiles() {
+            $.get('/scan', function (data) {
+                const fileList = $('#file-list');
+                fileList.empty();
+
+                data.forEach(file => {
+                    const row = `
+                        <tr>
+                            <td>${file.file}</td>
+                            <td>${file.hasViewport ? 'Présent' : 'Manquant'}</td>
+                            <td>
+                                ${
+                                    file.hasViewport
+                                        ? '<button class="btn btn-warning btn-sm replace" data-file="' +
+                                          file.file +
+                                          '">Remplacer</button>'
+                                        : '<button class="btn btn-success btn-sm add" data-file="' +
+                                          file.file +
+                                          '">Ajouter</button>'
+                                }
+                            </td>
+                        </tr>
+                    `;
+                    fileList.append(row);
+                });
+            });
+        }
+
+        // Ajouter ou remplacer la balise viewport
+        $(document).on('click', '.add, .replace', function () {
+            const file = $(this).data('file');
+            const action = $(this).hasClass('add') ? 'add' : 'replace';
+
+            $.post('/update', { file, action }, function (response) {
+                if (response.success) {
+                    alert('Mise à jour effectuée avec succès.');
+                    loadFiles();
+                }
+            });
+        });
+
+        // Charger les fichiers au démarrage
+        $(document).ready(function () {
+            loadFiles();
+        });
+    </script>
+</body>
+</html>
