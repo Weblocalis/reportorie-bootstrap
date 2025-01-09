@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion de Page - BoostifySEO</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="fw-bold mb-4" id="formTitle">Gestion de Page</h1>
+
+    <!-- Formulaire de création/modification -->
+    <form id="pageForm" enctype="multipart/form-data">
+      <!-- Titre -->
+      <div class="mb-4">
+        <label for="pageTitle" class="form-label">Titre de la Page</label>
+        <input type="text" class="form-control" id="pageTitle" placeholder="Entrez le titre de la page" required>
+      </div>
+
+      <!-- URL de la page -->
+      <div class="mb-4">
+        <label for="pageURL" class="form-label">URL de la Page</label>
+        <input type="text" class="form-control" id="pageURL" placeholder="https://example.com/page" required>
+      </div>
+
+      <!-- Image Vedette -->
+      <div class="mb-4">
+        <label for="featuredImage" class="form-label">Image Vedette</label>
+        <input type="file" class="form-control" id="featuredImage" accept="image/*">
+        <div class="mt-3 text-center">
+          <img id="previewImage" src="https://via.placeholder.com/400x200" alt="Prévisualisation de l'image" class="img-fluid rounded shadow" style="max-height: 200px;">
+        </div>
+      </div>
+
+      <!-- Méta-description -->
+      <div class="mb-4">
+        <label for="metaDescription" class="form-label">Méta-description</label>
+        <textarea class="form-control" id="metaDescription" rows="3" placeholder="Entrez une méta-description" required></textarea>
+      </div>
+
+      <!-- Contenu de la page -->
+      <div class="mb-4">
+        <label for="pageContent" class="form-label">Contenu de la Page</label>
+        <textarea class="form-control" id="pageContent" rows="10" placeholder="Écrivez ou modifiez le contenu de la page" required></textarea>
+      </div>
+
+      <!-- État de la page -->
+      <div class="mb-4">
+        <label for="pageStatus" class="form-label">État de la Page</label>
+        <select class="form-select" id="pageStatus" required>
+          <option value="Publié">Publié</option>
+          <option value="Brouillon">Brouillon</option>
+          <option value="Dépublié">Dépublié</option>
+        </select>
+      </div>
+
+      <!-- Boutons d'action -->
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" id="cancelAction">Annuler</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Script jQuery -->
+  <script>
+    $(document).ready(function () {
+      // Détection du contexte (modification ou création)
+      const isEditMode = !!localStorage.getItem('pageData'); // Simulez l'existence de données pour modification
+      const pageData = isEditMode ? JSON.parse(localStorage.getItem('pageData')) : null;
+
+      // Remplir les champs si modification
+      if (isEditMode && pageData) {
+        $('#formTitle').text('Modifier une Page');
+        $('#pageTitle').val(pageData.title);
+        $('#pageURL').val(pageData.url);
+        $('#metaDescription').val(pageData.metaDescription);
+        $('#pageContent').val(pageData.content);
+        $('#pageStatus').val(pageData.status);
+
+        // Charger l'image vedette si disponible
+        if (pageData.featuredImage) {
+          $('#previewImage').attr('src', pageData.featuredImage);
+        }
+      } else {
+        $('#formTitle').text('Créer une Page');
+      }
+
+      // Prévisualisation de l'image vedette
+      $('#featuredImage').on('change', function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            $('#previewImage').attr('src', e.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Soumission du formulaire
+      $('#pageForm').on('submit', function (e) {
+        e.preventDefault();
+        const pageTitle = $('#pageTitle').val();
+        const pageURL = $('#pageURL').val();
+        const metaDescription = $('#metaDescription').val();
+        const pageContent = $('#pageContent').val();
+        const pageStatus = $('#pageStatus').val();
+        const featuredImage = $('#previewImage').attr('src'); // L'image prévisualisée
+
+        const pageDetails = {
+          title: pageTitle,
+          url: pageURL,
+          metaDescription: metaDescription,
+          content: pageContent,
+          status: pageStatus,
+          featuredImage: featuredImage,
+        };
+
+        if (isEditMode) {
+          alert('La page a été modifiée avec succès !');
+        } else {
+          alert('La page a été créée avec succès !');
+        }
+
+        console.log(pageDetails);
+        localStorage.setItem('pageData', JSON.stringify(pageDetails)); // Simule une sauvegarde
+      });
+
+      // Annuler l'action
+      $('#cancelAction').on('click', function () {
+        if (confirm('Voulez-vous vraiment annuler ?')) {
+          window.history.back();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

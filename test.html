@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BoostifySEO</title>
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- FontAwesome CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(45deg, #457b9d, #1d3557);">
+      <div class="container">
+         <a class="navbar-brand fw-bold" href="#">BoostifySEO</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+               <li class="nav-item"><a class="nav-link active" href="#home">Accueil</a></li>
+               <li class="nav-item"><a class="nav-link" href="#tools">Outils SEO</a></li>
+               <li class="nav-item"><a class="nav-link" href="#pricing">Tarifs</a></li>
+               <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+               <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Section Héro -->
+   <header class="text-white" style="background: linear-gradient(45deg, #1d3557, #457b9d);">
+      <div class="container text-center py-5">
+         <div class="row align-items-center">
+         
+         
+            <div class="col-lg-7 col-md-12 text-lg-start text-center">
+               <h1 class="fw-bold display-4 mb-3">Boostez votre SEO avec BoostifySEO</h1>
+               <p class="lead mb-4">
+                  Optimisez votre visibilité en ligne grâce à nos outils performants et faciles à utiliser. 
+                  BoostifySEO, votre partenaire pour conquérir la première page des moteurs de recherche.
+               </p>
+               <button href="#tools" class="btn btn-warning btn-lg me-2">Découvrir nos outils</button>
+               <button href="#contact" class="btn btn-outline-light btn-lg">Nous contacter</button>
+               
+               
+            </div>
+            <div class="col-lg-5 col-md-12 text-center">
+               <img src="https://via.placeholder.com/500x300" alt="Illustration BoostifySEO" class="img-fluid rounded shadow">
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- Main Content -->
+<main class="container my-5">
+   <article class="bg-light p-4 rounded shadow">
+      <header class="mb-4">
+         <h1 class="text-center">Qu'est-ce que Schema.org et comment optimiser votre blog avec les données structurées ?</h1>
+         <p class="lead text-center">
+            Schema.org est une norme essentielle pour structurer les données de votre site web, 
+            permettant d'améliorer la visibilité sur les moteurs de recherche et l'expérience utilisateur. 
+            Découvrez comment le type <strong>"Blog"</strong> peut transformer votre site en une ressource SEO efficace.
+         </p>
+      </header>
+
+      <section class="mb-4">
+         <h2 class="h4">Pourquoi utiliser Schema.org pour votre blog ?</h2>
+         <p>
+            Le type <a href="https://schema.org/Blog" target="_blank" class="text-decoration-none">"Blog"</a> de Schema.org permet 
+            aux moteurs de recherche de comprendre plus efficacement vos contenus. En ajoutant des balises structurées, 
+            vous pouvez obtenir des résultats enrichis (rich snippets), améliorer votre indexation et offrir une 
+            meilleure expérience utilisateur.
+         </p>
+      </section>
+
+      <section class="mb-4">
+         <h2 class="h4">Propriétés principales du type "Blog"</h2>
+         <div class="table-responsive">
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th scope="col">Propriété</th>
+                     <th scope="col">Description</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><code>blogPost</code></td>
+                     <td>Référence aux articles individuels de votre blog (<a href="https://schema.org/BlogPosting" target="_blank" class="text-decoration-none">BlogPosting</a>).</td>
+                  </tr>
+                  <tr>
+                     <td><code>issn</code></td>
+                     <td>Numéro de série pour identifier une publication périodique.</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </section>
+
+      <section class="mb-4">
+         <h2 class="h4">Exemple pratique : Implémentation de balises Schema.org pour un blog</h2>
+         <p>Voici un exemple de balisage JSON-LD pour un blog simple :</p>
+         <div class="bg-dark text-light p-3 rounded">
+            <pre class="m-0"><code>{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Mon Blog Exemple",
+  "url": "https://exemple.com",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Titre de l'article",
+      "url": "https://exemple.com/article-1",
+      "author": {
+        "@type": "Person",
+        "name": "Jean Dupont"
+      },
+      "datePublished": "2025-01-09"
+    }
+  ]
+}</code></pre>
+         </div>
+      </section>
+
+      <section class="mb-4">
+         <h2 class="h4">Étude de cas : Les bénéfices SEO de Schema.org</h2>
+         <p>
+            Un blog bien structuré avec Schema.org peut voir une amélioration notable de son CTR 
+            (taux de clic) et de son positionnement dans les résultats de recherche. Par exemple, 
+            le site <em>BlogProSEO</em> a observé une augmentation de 20% du trafic organique en six mois 
+            après avoir intégré les données structurées.
+         </p>
+      </section>
+
+      <section>
+         <h2 class="h4">Outils et ressources pour aller plus loin</h2>
+         <ul class="list-unstyled">
+            <li>
+               <a href="https://validator.schema.org" target="_blank" class="text-decoration-none">Validator de Google</a> : Validez vos balises Schema.org.
+            </li>
+            <li>
+               <a href="https://schema.org/Blog" target="_blank" class="text-decoration-none">Documentation officielle de Schema.org</a> : Comprenez en détail le type "Blog".
+            </li>
+         </ul>
+      </section>
+
+      <footer class="mt-4">
+         <p class="text-center">
+            En conclusion, intégrer Schema.org à votre blog est une étape essentielle pour optimiser votre SEO. 
+            Si vous souhaitez en savoir plus ou obtenir de l'aide pour implémenter ces balises, n'hésitez pas à 
+            nous contacter.
+      </p>
+      </footer>
+   </article>
+</main>
+
+
+
+<!-- avis vidéo -->
+<section class="py-5 bg-dark text-white" id="success-stories">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Nos Success Stories</h2>
+    <div class="row g-4">
+      <!-- Vidéo 1 -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/your-video-id" title="Success Story 1" allowfullscreen></iframe>
+        </div>
+        <h5 class="mt-3">Une croissance spectaculaire pour une boutique en ligne</h5>
+        <p class="text-muted">Découvrez comment nous avons doublé leur trafic en 3 mois.</p>
+      </div>
+      <!-- Vidéo 2 -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/your-video-id" title="Success Story 2" allowfullscreen></iframe>
+        </div>
+        <h5 class="mt-3">Un blog personnel devenu une référence</h5>
+        <p class="text-muted">Une stratégie de contenu SEO qui a fait toute la différence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- avis -->
+<section class="py-5 bg-light" id="avis">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Ce que disent nos utilisateurs</h2>
+    <div class="row">
+      <!-- Avis 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <p class="card-text">
+              "BoostifySEO a transformé mon business ! Grâce à leurs outils performants, j'ai atteint la première page de Google en quelques semaines."
+            </p>
+            <div class="d-flex align-items-center mt-3">
+              <img src="https://via.placeholder.com/50" alt="Avatar" class="rounded-circle me-3">
+              <div>
+                <h6 class="mb-0 fw-bold">Jean Dupont</h6>
+                <small class="text-muted">Entrepreneur</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Avis 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <p class="card-text">
+              "Un outil indispensable pour tous les professionnels du marketing digital. L'interface est intuitive et les résultats sont impressionnants."
+            </p>
+            <div class="d-flex align-items-center mt-3">
+              <img src="https://via.placeholder.com/50" alt="Avatar" class="rounded-circle me-3">
+              <div>
+                <h6 class="mb-0 fw-bold">Marie Leclerc</h6>
+                <small class="text-muted">Spécialiste SEO</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Avis 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <p class="card-text">
+              "J'étais sceptique au début, mais BoostifySEO a surpassé toutes mes attentes. Mon trafic a doublé en un mois !"
+            </p>
+            <div class="d-flex align-items-center mt-3">
+              <img src="https://via.placeholder.com/50" alt="Avatar" class="rounded-circle me-3">
+              <div>
+                <h6 class="mb-0 fw-bold">Alex Martin</h6>
+                <small class="text-muted">Blogger</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- nos services -->
+<section class="py-5" id="services" style="background: linear-gradient(45deg, #f4f4f4, #eaeaea);">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Nos Services</h2>
+    <p class="text-center text-muted mb-5">
+      Découvrez comment BoostifySEO peut transformer votre présence en ligne avec des services sur mesure et performants.
+    </p>
+    <div class="row g-4">
+      <!-- Service 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+            <h5 class="card-title fw-bold">Optimisation SEO</h5>
+            <p class="card-text text-muted">
+              Augmentez votre visibilité sur les moteurs de recherche avec nos techniques éprouvées de référencement naturel.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+            <h5 class="card-title fw-bold">Outils SEO</h5>
+            <p class="card-text text-muted">
+              Accédez à une suite d'outils SEO performants pour analyser, optimiser et suivre vos performances.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-pen-fancy fa-3x text-primary mb-3"></i>
+            <h5 class="card-title fw-bold">Création de Contenu</h5>
+            <p class="card-text text-muted">
+              Produisez des contenus optimisés pour le SEO, engageants et adaptés à votre audience cible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- certificat -->
+<section class="py-5 bg-light" id="certifications">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Nos Certifications et Partenariats</h2>
+    <div class="row g-4">
+      <!-- Partenaire 1 -->
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="https://via.placeholder.com/150x100" alt="Certificat 1" class="img-fluid">
+      </div>
+      <!-- Partenaire 2 -->
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="https://via.placeholder.com/150x100" alt="Certificat 2" class="img-fluid">
+      </div>
+      <!-- Partenaire 3 -->
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="https://via.placeholder.com/150x100" alt="Certificat 3" class="img-fluid">
+      </div>
+      <!-- Partenaire 4 -->
+      <div class="col-lg-3 col-md-4 col-6">
+        <img src="https://via.placeholder.com/150x100" alt="Certificat 4" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- audit -->
+<section class="py-5" id="audit-seo" style="background: linear-gradient(45deg, #1d3557, #457b9d); color: white;">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Audit SEO Gratuit</h2>
+    <p class="text-center mb-5">
+      Entrez l'URL de votre site pour recevoir un rapport SEO gratuit en quelques secondes.
+    </p>
+    <form class="row g-3 justify-content-center">
+      <div class="col-md-8">
+        <input type="text" class="form-control" placeholder="Entrez l'URL de votre site" required>
+      </div>
+      <div class="col-md-4 text-center">
+        <button type="submit" class="btn btn-warning btn-lg">Obtenir Mon Rapport</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- blog -->
+<section class="py-5" id="blog">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Articles Récents</h2>
+    <div class="row g-4">
+      <!-- Article 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Article 1">
+          <div class="card-body">
+            <h5 class="card-title">5 Astuces SEO pour Dominer la Première Page</h5>
+            <p class="card-text text-muted">Découvrez les meilleures pratiques pour optimiser votre site et attirer un trafic de qualité.</p>
+            <a href="#article-1" class="btn btn-primary">Lire la suite</a>
+          </div>
+        </div>
+      </div>
+      <!-- Article 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card border-0 shadow-sm">
+          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Article 2">
+          <div class="card-body">
+            <h5 class="card-title">Pourquoi les Données Structurées Sont Cruciales ?</h5>
+            <p class="card-text text-muted">Apprenez comment les balises Schema.org peuvent booster votre SEO.</p>
+            <a href="#article-2" class="btn btn-primary">Lire la suite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- statique -->
+<section class="py-5 bg-light" id="statistiques">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">BoostifySEO en Chiffres</h2>
+    <div class="row g-4">
+      <!-- Stat 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-box">
+          <h3 class="fw-bold display-4">+200%</h3>
+          <p class="text-muted">Augmentation moyenne du trafic</p>
+        </div>
+      </div>
+      <!-- Stat 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-box">
+          <h3 class="fw-bold display-4">98%</h3>
+          <p class="text-muted">Taux de satisfaction client</p>
+        </div>
+      </div>
+      <!-- Stat 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-box">
+          <h3 class="fw-bold display-4">+500</h3>
+          <p class="text-muted">Projets SEO réussis</p>
+        </div>
+      </div>
+      <!-- Stat 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-box">
+          <h3 class="fw-bold display-4">+100</h3>
+          <p class="text-muted">Outils SEO disponibles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- études de cas -->
+<section class="py-5" id="etudes-de-cas">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Nos Études de Cas</h2>
+    <div class="row g-4">
+      <!-- Cas 1 -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Augmentation de 200% du trafic pour une boutique en ligne</h5>
+            <p class="card-text">
+              Nous avons optimisé les mots-clés et la structure technique d'une boutique en ligne, augmentant son trafic organique de 200% en 6 mois.
+            </p>
+            <a href="#contact" class="btn btn-primary">Voir les détails</a>
+          </div>
+        </div>
+      </div>
+      <!-- Cas 2 -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Une startup classée n°1 pour son secteur</h5>
+            <p class="card-text">
+              Grâce à nos outils SEO, cette startup a atteint la première position pour ses mots-clés principaux en seulement 3 mois.
+            </p>
+            <a href="#contact" class="btn btn-primary">Voir les détails</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- faq -->
+<section class="py-5" id="faq" style="background-color: #f8f9fa;">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Questions Fréquemment Posées</h2>
+    <div class="accordion" id="faqAccordion">
+      <!-- Question 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Comment BoostifySEO peut-il améliorer mon classement ?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            BoostifySEO vous fournit des outils pour analyser vos performances SEO, corriger vos faiblesses, et maximiser votre visibilité en ligne grâce à des stratégies éprouvées.
+          </div>
+        </div>
+      </div>
+      <!-- Question 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Quels outils sont inclus dans votre plateforme ?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Nous proposons des outils tels que l'analyse de mots-clés, la vérification de backlinks, la génération de sitemaps, et bien plus encore.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- simulateur -->
+<section class="py-5 bg-light" id="simulateur">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Simulateur de Classement</h2>
+    <p class="text-center text-muted mb-4">
+      Estimez votre position actuelle sur les moteurs de recherche pour un mot-clé spécifique.
+    </p>
+    <form class="row g-3 justify-content-center">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Entrez votre mot-clé" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="URL de votre site" required>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Simuler</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- challenge -->
+<section class="py-5" id="seo-challenge">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">SEO Challenge de la Semaine</h2>
+    <p class="lead mb-5">
+      Relevez notre défi hebdomadaire et améliorez vos compétences en SEO. Cette semaine : <strong>Optimisez votre balise méta-description.</strong>
+    </p>
+    <a href="#details-challenge" class="btn btn-warning btn-lg">Voir le Challenge</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- contact -->
+<section class="py-5 text-center" id="contact" >
+  <div class="container">
+    <h2 class="fw-bold mb-4">Contactez-nous</h2>
+    <p class="lead mb-5">
+      Prêt à transformer votre visibilité en ligne ? Nous sommes là pour vous accompagner.
+    </p>
+    <a href="mailto:contact@boostifyseo.com" class="btn btn-warning btn-lg">Envoyez-nous un email</a>
+  </div>
+</section>
+
+
+
+
+<!-- logo partenaires -->
+<section class="py-5 bg-light" id="partenaires">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4 d-none">Nos Partenaires</h2>
+    <div class="row">
+      <div class="col-12">
+        <div class="partner-slider d-flex align-items-center overflow-hidden">
+          <div class="partner-logo mx-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgRPsPUJQc2w731WrSgHPgikQa0M5sY85cwg&s" alt="Partenaire 1" class="img-fluid">
+          </div>
+          <div class="partner-logo mx-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTbPlr-_Q0C-zItelpF7fW55VSdQv7yEC01w&s" alt="Partenaire 2" class="img-fluid">
+          </div>
+          <div class="partner-logo mx-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgRPsPUJQc2w731WrSgHPgikQa0M5sY85cwg&s" alt="Partenaire 3" class="img-fluid">
+          </div>
+          <div class="partner-logo mx-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgRPsPUJQc2w731WrSgHPgikQa0M5sY85cwg&s" alt="Partenaire 4" class="img-fluid">
+          </div>
+          <div class="partner-logo mx-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgRPsPUJQc2w731WrSgHPgikQa0M5sY85cwg&s" alt="Partenaire 5" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+   <!-- Footer -->
+   <footer class="text-center text-white" style="background: linear-gradient(45deg, #1d3557, #457b9d);">
+      <div class="container py-4">
+         <h3 class="fw-bold">BoostifySEO</h3>
+         <p>Boostez votre visibilité avec des outils SEO performants et faciles à utiliser.</p>
+         <div class="row justify-content-center">
+            <div class="col-auto"><a href="#about" class="text-white text-decoration-none mx-2">À propos</a></div>
+            <div class="col-auto"><a href="#tools" class="text-white text-decoration-none mx-2">Outils SEO</a></div>
+            <div class="col-auto"><a href="#pricing" class="text-white text-decoration-none mx-2">Tarifs</a></div>
+            <div class="col-auto"><a href="#contact" class="text-white text-decoration-none mx-2">Contact</a></div>
+         </div>
+         <div class="mt-4">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+         </div>
+         <div class="border-top border-light mt-4"></div>
+         <div class="py-3">
+            <p>© 2025 BoostifySEO. Tous droits réservés. | Développé par <a href="https://boostifyseo.com" class="text-white text-decoration-none">BoostifySEO</a></p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Scripts -->
+   <script>
+      $(document).ready(function () {
+         // Animation du texte au chargement
+         $("header h1").hide().fadeIn(1500);
+
+         // Animation des boutons au survol
+         $("header .btn").hover(
+            function () {
+               $(this).css("transform", "scale(1.1)").css("box-shadow", "0px 4px 10px rgba(0, 0, 0, 0.2)");
+            },
+            function () {
+               $(this).css("transform", "scale(1)").css("box-shadow", "none");
+            }
+         );
+      });
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
