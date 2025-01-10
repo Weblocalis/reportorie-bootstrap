@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur Amazon FBA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label, input, select, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f1f1f1;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Calculateur Amazon FBA</h1>
+    <p>Calculez les frais et les marges bénéficiaires pour vos ventes sur Amazon FBA avec conversion de devises</p>
+  </header>
+  <main>
+    <form id="fbaForm">
+      <label for="salePrice">Prix de vente (en USD) :</label>
+      <input type="number" id="salePrice" placeholder="Entrez le prix de vente" required min="0" step="any" />
+
+      <label for="currency">Sélectionner la devise :</label>
+      <select id="currency">
+        <option value="USD">USD (Dollar)</option>
+        <option value="EUR">EUR (Euro)</option>
+        <option value="GBP">GBP (Livre)</option>
+        <option value="CAD">CAD (Dollar canadien)</option>
+      </select>
+
+      <label for="shippingFees">Frais d'expédition vers Amazon (en USD) :</label>
+      <input type="number" id="shippingFees" placeholder="Frais d'expédition vers Amazon" required min="0" step="any" />
+
+      <label for="amazonFees">Frais Amazon (en USD) :</label>
+      <input type="number" id="amazonFees" placeholder="Frais Amazon" required min="0" step="any" />
+
+      <label for="categoryFees">Catégorie de produit (frais de recommandation) :</label>
+      <select id="categoryFees">
+        <option value="0.15">Frais de recommandation 15%</option>
+        <option value="0.20">Frais de recommandation 20%</option>
+        <option value="0.25">Frais de recommandation 25%</option>
+      </select>
+
+      <label for="fbaFees">Frais FBA (en USD) :</label>
+      <input type="number" id="fbaFees" placeholder="Frais FBA" required min="0" step="any" />
+
+      <label for="costGoods">Coût des marchandises (en USD) :</label>
+      <input type="number" id="costGoods" placeholder="Coût des marchandises" required min="0" step="any" />
+
+      <label for="ppcCost">Coût PPC (%) :</label>
+      <input type="number" id="ppcCost" value="5" min="0" step="0.1" max="100" />%
+
+      <label for="marketingCosts">Autres coûts marketing (%) :</label>
+      <input type="number" id="marketingCosts" value="5" min="0" step="0.1" max="100" />%
+
+      <label for="afterSaleCosts">Coût après-vente (retours, endommagés, %) :</label>
+      <input type="number" id="afterSaleCosts" value="2" min="0" step="0.1" max="100" />%
+
+      <label for="unitsSold">Unités vendues :</label>
+      <input type="number" id="unitsSold" value="100" min="0" step="1" required />
+
+      <button type="button" id="calculateBtn">Calculer les frais</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+      <p id="profitResult"></p>
+    </div>
+  </main>
+
+  <script>
+    // Fonction pour obtenir le taux de conversion de devises
+    async function getExchangeRate(currency) {
+      const url = `https://api.exchangerate-api.com/v4/latest/USD`;  // Taux de change par rapport à USD (taux de base)
+      const response = await fetch(url);
+      const data = await response.json();
+      return data.rates[currency] || 1; // Si la devise est introuvable, retourner 1 (pas de conversion)
+    }
+
+    document.getElementById("calculateBtn").addEventListener("click", async () => {
+      const salePrice = parseFloat(document.getElementById("salePrice").value);
+      const shippingFees = parseFloat(document.getElementById("shippingFees").value);
+      const amazonFees = parseFloat(document.getElementById("amazonFees").value);
+      const categoryFees = parseFloat(document.getElementById("categoryFees").value);
+      const fbaFees = parseFloat(document.getElementById("fbaFees").value);
+      const costGoods = parseFloat(document.getElementById("costGoods").value);
+      const ppcCost = parseFloat(document.getElementById("ppcCost").value) / 100;
+      const marketingCosts = parseFloat(document.getElementById("marketingCosts").value) / 100;
+      const afterSaleCosts = parseFloat(document.getElementById("afterSaleCosts").value) / 100;
+      const unitsSold = parseInt(document.getElementById("unitsSold").value);
+      const currency = document.getElementById("currency").value;
+
+      if (isNaN(salePrice) || salePrice <= 0) {
+        alert("Veuillez entrer un prix de vente valide.");
+        return;
+      }
+
+      // Obtenir le taux de conversion pour la devise choisie
+      const exchangeRate = await getExchangeRate(currency);
+      const convertedPrice = salePrice * exchangeRate;
+
+      // Calcul des frais totaux
+      const recommendationFees = convertedPrice * categoryFees;
+      const totalFBAFees = fbaFees * unitsSold;
+      const ppcTotal = convertedPrice * ppcCost * unitsSold;
+      const marketingTotal = convertedPrice * marketingCosts * unitsSold;
+      const afterSaleTotal = convertedPrice * afterSaleCosts * unitsSold;
+
+      // Coût total
+      const totalCosts = costGoods * unitsSold + shippingFees + totalFBAFees + recommendationFees + ppcTotal + marketingTotal + afterSaleTotal;
+      const totalRevenue = convertedPrice * unitsSold;
+
+      // Calcul du bénéfice net et marge bénéficiaire
+      const netProfit = totalRevenue - totalCosts;
+      const margin = (netProfit / totalRevenue) * 100;
+
+      // Affichage des résultats
+      const resultDiv = document.getElementById("result");
+      const profitResult = document.getElementById("profitResult");
+
+      profitResult.innerHTML = `
+        <strong>Résultats du calcul :</strong><br>
+        Bénéfice net : ${netProfit.toFixed(2)} ${currency}<br>
+        Marge bénéficiaire : ${margin.toFixed(2)}%<br>
+        Recettes totales : ${totalRevenue.toFixed(2)} ${currency}<br>
+        Coût total : ${totalCosts.toFixed(2)} ${currency}<br>
+        Coût des marchandises : ${(costGoods * unitsSold).toFixed(2)} ${currency}<br>
+        Frais d'expédition vers Amazon : ${shippingFees.toFixed(2)} ${currency}<br>
+        Frais Amazon (frais d'exécution) : ${amazonFees.toFixed(2)} ${currency}<br>
+        Frais de recommandation : ${recommendationFees.toFixed(2)} ${currency}<br>
+        Frais FBA : ${totalFBAFees.toFixed(2)} ${currency}<br>
+        Coût PPC : ${ppcTotal.toFixed(2)} ${currency}<br>
+        Autres coûts marketing : ${marketingTotal.toFixed(2)} ${currency}<br>
+        Coût après-vente : ${afterSaleTotal.toFixed(2)} ${currency}
+      `;
+
+      resultDiv.style.display = "block";
+    });
+  </script>
+</body>
+</html>

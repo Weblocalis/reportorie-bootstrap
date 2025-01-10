@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcul de Temps entre Deux Dates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label, input, select, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f1f1f1;
+      text-align: center;
+      font-size: 18px;
+    }
+    .history {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f1f1f1;
+      font-size: 16px;
+    }
+    .history ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .history li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Calcul de Temps entre Deux Dates</h1>
+    <p>Obtenez l'intervalle entre deux dates en secondes, minutes, heures, jours, mois ou années</p>
+  </header>
+  <main>
+    <form id="timeCalcForm">
+      <label for="dateSelection">Sélectionner l'intervalle :</label>
+      <select id="dateSelection">
+        <option value="none">Choisissez un intervalle prédéfini</option>
+        <option value="today">Aujourd'hui</option>
+        <option value="yesterday">Hier</option>
+        <option value="lastWeek">La semaine dernière</option>
+        <option value="lastMonth">Le mois dernier</option>
+      </select>
+
+      <label for="startDate">Date de début :</label>
+      <input type="date" id="startDate" required />
+
+      <label for="endDate">Date de fin :</label>
+      <input type="date" id="endDate" required />
+
+      <button type="button" id="calculateBtn">Calculer l'intervalle</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+      <p id="intervalResult"></p>
+    </div>
+
+    <div class="history" id="history">
+      <h3>Historique des Calculs</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </main>
+
+  <script>
+    const historyList = document.getElementById("historyList");
+
+    document.getElementById("dateSelection").addEventListener("change", function() {
+      const dateSelection = this.value;
+      const today = new Date();
+      const lastWeek = new Date();
+      lastWeek.setDate(today.getDate() - 7);
+      const lastMonth = new Date();
+      lastMonth.setMonth(today.getMonth() - 1);
+
+      if (dateSelection === "today") {
+        document.getElementById("startDate").value = today.toISOString().split('T')[0];
+        document.getElementById("endDate").value = today.toISOString().split('T')[0];
+      } else if (dateSelection === "yesterday") {
+        today.setDate(today.getDate() - 1);
+        document.getElementById("startDate").value = today.toISOString().split('T')[0];
+        document.getElementById("endDate").value = today.toISOString().split('T')[0];
+      } else if (dateSelection === "lastWeek") {
+        document.getElementById("startDate").value = lastWeek.toISOString().split('T')[0];
+        document.getElementById("endDate").value = today.toISOString().split('T')[0];
+      } else if (dateSelection === "lastMonth") {
+        document.getElementById("startDate").value = lastMonth.toISOString().split('T')[0];
+        document.getElementById("endDate").value = today.toISOString().split('T')[0];
+      }
+      // Après la modification, on calcule automatiquement
+      calculateInterval();
+    });
+
+    document.getElementById("calculateBtn").addEventListener("click", calculateInterval);
+
+    function calculateInterval() {
+      const startDate = document.getElementById("startDate").value;
+      const endDate = document.getElementById("endDate").value;
+
+      if (!startDate || !endDate) {
+        alert("Veuillez sélectionner deux dates valides.");
+        return;
+      }
+
+      // Convertir les dates en objets Date
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+
+      if (end < start) {
+        alert("La date de fin ne peut pas être antérieure à la date de début.");
+        return;
+      }
+
+      // Calcul de l'intervalle en millisecondes
+      const timeDifference = end - start;
+
+      // Calcul des différentes unités
+      const seconds = timeDifference / 1000;
+      const minutes = seconds / 60;
+      const hours = minutes / 60;
+      const days = hours / 24;
+      const months = days / 30.4375; // Moyenne des jours par mois
+      const years = days / 365.25;  // Moyenne des jours par an (en tenant compte des années bissextiles)
+
+      // Affichage du résultat
+      const resultDiv = document.getElementById("result");
+      const intervalResult = document.getElementById("intervalResult");
+
+      intervalResult.innerHTML = `
+        <strong>Intervalle entre les deux dates :</strong><br>
+        <b>${seconds.toFixed(0)} secondes</b><br>
+        <b>${minutes.toFixed(0)} minutes</b><br>
+        <b>${hours.toFixed(0)} heures</b><br>
+        <b>${days.toFixed(0)} jours</b><br>
+        <b>${months.toFixed(2)} mois</b><br>
+        <b>${years.toFixed(2)} années</b>
+      `;
+      
+      resultDiv.style.display = "block";
+
+      // Ajouter à l'historique
+      addToHistory(startDate, endDate, seconds, minutes, hours, days, months, years);
+    }
+
+    // Ajouter un calcul à l'historique
+    function addToHistory(startDate, endDate, seconds, minutes, hours, days, months, years) {
+      const li = document.createElement("li");
+      const historyText = `${startDate} → ${endDate} : ${seconds.toFixed(0)} secondes, ${minutes.toFixed(0)} minutes, ${hours.toFixed(0)} heures, ${days.toFixed(0)} jours, ${months.toFixed(2)} mois, ${years.toFixed(2)} années`;
+
+      li.textContent = historyText;
+      historyList.appendChild(li);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcul des Frais eBay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label, input, select, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f1f1f1;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Calcul des Frais eBay</h1>
+    <p>Calculez les frais eBay pour vos ventes avec conversion de devises</p>
+  </header>
+  <main>
+    <form id="ebayFeesForm">
+      <label for="salePrice">Prix de vente (en EUR) :</label>
+      <input type="number" id="salePrice" placeholder="Entrez le prix de vente" required min="0" step="any" />
+
+      <label for="currency">Sélectionner la devise :</label>
+      <select id="currency">
+        <option value="EUR">EUR (Euro)</option>
+        <option value="USD">USD (Dollar)</option>
+        <option value="GBP">GBP (Livre)</option>
+        <option value="CAD">CAD (Dollar canadien)</option>
+      </select>
+
+      <label for="categoryFees">Catégorie (frais d'insertion) :</label>
+      <select id="categoryFees">
+        <option value="0">Aucune catégorie spéciale</option>
+        <option value="0.35">Frais d'insertion standard (0,35 EUR)</option>
+        <option value="1.5">Catégorie spéciale (1,5 EUR)</option>
+      </select>
+
+      <label for="finalValueFees">Frais de finalisation (%) :</label>
+      <select id="finalValueFees">
+        <option value="0.10">10% (frais standard)</option>
+        <option value="0.05">5% (frais réduit)</option>
+        <option value="0.12">12% (frais majorés pour certaines catégories)</option>
+      </select>
+
+      <label for="paypalFees">Frais PayPal (%) :</label>
+      <input type="number" id="paypalFees" value="2.9" step="0.1" min="0" max="100" />% + 0.30 EUR
+
+      <button type="button" id="calculateBtn">Calculer les frais</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+      <p id="feesResult"></p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("calculateBtn").addEventListener("click", async () => {
+      const salePrice = parseFloat(document.getElementById("salePrice").value);
+      const categoryFees = parseFloat(document.getElementById("categoryFees").value);
+      const finalValueFeesPercent = parseFloat(document.getElementById("finalValueFees").value);
+      const paypalFeesPercent = parseFloat(document.getElementById("paypalFees").value);
+      const currency = document.getElementById("currency").value;
+
+      if (isNaN(salePrice) || salePrice <= 0) {
+        alert("Veuillez entrer un prix de vente valide.");
+        return;
+      }
+
+      // Convertir le prix si nécessaire
+      const exchangeRate = await getExchangeRate(currency);
+      const convertedPrice = salePrice * exchangeRate;
+
+      // Calcul des frais d'insertion
+      const insertionFees = categoryFees;
+
+      // Calcul des frais de finalisation de vente
+      const finalValueFees = convertedPrice * finalValueFeesPercent;
+
+      // Calcul des frais PayPal
+      const paypalFees = (convertedPrice * paypalFeesPercent / 100) + 0.30;
+
+      // Calcul total des frais
+      const totalFees = insertionFees + finalValueFees + paypalFees;
+      const netAmount = convertedPrice - totalFees;
+
+      // Affichage du résultat
+      const resultDiv = document.getElementById("result");
+      const feesResult = document.getElementById("feesResult");
+
+      feesResult.innerHTML = `
+        <strong>Résultats du calcul :</strong><br>
+        Prix de vente : ${convertedPrice.toFixed(2)} ${currency} (après conversion)<br>
+        Frais d'insertion : ${insertionFees.toFixed(2)} ${currency}<br>
+        Frais de finalisation : ${finalValueFees.toFixed(2)} ${currency}<br>
+        Frais PayPal : ${paypalFees.toFixed(2)} ${currency}<br>
+        <strong>Total des frais : ${totalFees.toFixed(2)} ${currency}</strong><br>
+        Montant net après frais : ${netAmount.toFixed(2)} ${currency}
+      `;
+
+      resultDiv.style.display = "block";
+    });
+
+    async function getExchangeRate(currency) {
+      // Exemple d'une API gratuite de taux de change (il vous faudra une clé API si vous utilisez un service réel)
+      const apiKey = "YOUR_API_KEY"; // Remplacez par votre propre clé API
+      const url = `https://api.exchangerate-api.com/v4/latest/EUR`;  // Taux de change par rapport à l'Euro (EUR)
+      const response = await fetch(url);
+      const data = await response.json();
+
+      // Si la devise est EUR, aucun changement n'est nécessaire
+      if (currency === "EUR") return 1;
+
+      return data.rates[currency] || 1; // Si la devise est introuvable, retourner 1
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertisseur de Pression</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label, input, select, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f1f1f1;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Convertisseur de Pression</h1>
+    <p>Convertissez facilement des unités de pression</p>
+  </header>
+  <main>
+    <form id="pressureForm">
+      <label for="amount">Montant :</label>
+      <input type="number" id="amount" placeholder="Entrez un montant" required min="0" step="any" />
+
+      <label for="fromUnit">De :</label>
+      <select id="fromUnit">
+        <option value="Pa">Pascal (Pa)</option>
+        <option value="bar">Bar</option>
+        <option value="atm">Atmosphère (atm)</option>
+        <option value="mmHg">Millimètre de mercure (mmHg)</option>
+        <option value="psi">Livre par pouce carré (psi)</option>
+        <option value="kPa">Kilopascal (kPa)</option>
+        <option value="hPa">Hectopascal (hPa)</option>
+      </select>
+
+      <label for="toUnit">À :</label>
+      <select id="toUnit">
+        <option value="bar">Bar</option>
+        <option value="Pa">Pascal (Pa)</option>
+        <option value="atm">Atmosphère (atm)</option>
+        <option value="mmHg">Millimètre de mercure (mmHg)</option>
+        <option value="psi">Livre par pouce carré (psi)</option>
+        <option value="kPa">Kilopascal (kPa)</option>
+        <option value="hPa">Hectopascal (hPa)</option>
+      </select>
+
+      <button type="button" id="convertBtn">Convertir</button>
+      <button type="button" id="swapBtn">Inverser les unités</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+      <p id="conversionResult"></p>
+    </div>
+  </main>
+
+  <script>
+    // Facteurs de conversion pour chaque unité de pression
+    const pressureUnits = {
+      "Pa": 1,           // Pascal
+      "bar": 100000,     // Bar (1 bar = 100,000 Pa)
+      "atm": 101325,     // Atmosphère (1 atm = 101325 Pa)
+      "mmHg": 133.322,   // Millimètre de mercure (1 mmHg = 133.322 Pa)
+      "psi": 6894.76,    // Livre par pouce carré (1 psi = 6894.76 Pa)
+      "kPa": 1000,       // Kilopascal (1 kPa = 1000 Pa)
+      "hPa": 100,        // Hectopascal (1 hPa = 100 Pa)
+    };
+
+    document.getElementById("convertBtn").addEventListener("click", () => {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const fromUnit = document.getElementById("fromUnit").value;
+      const toUnit = document.getElementById("toUnit").value;
+      const resultDiv = document.getElementById("result");
+      const conversionResult = document.getElementById("conversionResult");
+
+      // Validation du montant
+      if (isNaN(amount) || amount <= 0) {
+        alert("Veuillez entrer un montant valide.");
+        return;
+      }
+
+      // Conversion de l'unité
+      const result = (amount * pressureUnits[fromUnit]) / pressureUnits[toUnit];
+
+      // Affichage du résultat
+      conversionResult.textContent = `${amount} ${fromUnit} équivalent à ${result.toFixed(2)} ${toUnit}`;
+      resultDiv.style.display = "block";
+    });
+
+    // Fonction pour inverser les unités
+    document.getElementById("swapBtn").addEventListener("click", () => {
+      const fromUnit = document.getElementById("fromUnit");
+      const toUnit = document.getElementById("toUnit");
+
+      // Inverser les valeurs des unités
+      const temp = fromUnit.value;
+      fromUnit.value = toUnit.value;
+      toUnit.value = temp;
+    });
+  </script>
+</body>
+</html>
