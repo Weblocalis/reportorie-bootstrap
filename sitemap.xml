@@ -1,182 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/album/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/album/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/badges/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/badges/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/blog/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/blog/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/breadcrumbs/classique/simple.html</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/breadcrumbs/classique/simple.html</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/breadcrumbs/index-template.html</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/breadcrumbs/index-template.html</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/buttons/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/buttons/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/carousel/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/carousel/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/cheatsheet/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/cheatsheet/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/checkout/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/checkout/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/cover/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/cover/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/dashboard/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/dashboard/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/dropdowns/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/dropdowns/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/features/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/features/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/footers/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/footers/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/grid/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/grid/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/headers/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/headers/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/heroes/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/heroes/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/jumbotron/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/jumbotron/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/jumbotrons/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/jumbotrons/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/list-groups/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/list-groups/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/masonry/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/masonry/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/modals/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/modals/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/navbar-bottom/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/navbar-bottom/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/navbar-fixed/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/navbar-fixed/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/navbar-static/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/navbar-static/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/navbars/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/navbars/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/navbars-offcanvas/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/navbars-offcanvas/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/offcanvas/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/offcanvas/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/offcanvas-navbar/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/offcanvas-navbar/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/pricing/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/pricing/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/product/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/product/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/sidebars/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/sidebars/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/sign-in/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/sign-in/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/starter-template/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/starter-template/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/sticky-footer/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/sticky-footer/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/sticky-footer-navbar/</loc>
+    <loc>https://weblocalis.github.io/reportorie-bootstrap/templates/sticky-footer-navbar/</loc>
     <lastmod>2025-01-14</lastmod>
     <priority>0.8</priority>
   </url>
