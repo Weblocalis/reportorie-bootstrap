@@ -14,6 +14,96 @@ body {
 
 
 
+
+/* Section héro */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section .overlay {
+    background: rgba(0, 0, 0, 0.6); /* Overlay sombre */
+    z-index: 1;
+}
+
+.hero-section .container {
+    z-index: 2;
+}
+
+/* Formes décoratives */
+.custom-shape-divider-bottom-167346 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-167346 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-167346 .shape-fill {
+    fill: #fff;
+}
+
+/* Bouton */
+.btn-primary {
+    background-color: #ff7f50;
+    border: none;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #e96e3f;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fade-in 1.2s ease-out forwards;
+}
+
+.animate-slide-in {
+    animation: slide-in 1.5s ease-out forwards;
+}
+
+.animate-bounce-in {
+    animation: bounce-in 1.8s ease-out forwards;
+}
+
+
+
+
+
 /* Diviseurs */
 .b-example-divider {
     width: 100%;
@@ -125,20 +215,34 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 .card-body ul {
-    max-height: 120px;
+    
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-
 .card-body ul li {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
     color: #555;
+    display: flex;
+    align-items: center;
 }
 
 .card-body ul li strong {
     color: #333;
+}
+
+.card-body ul li i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.card-body ul li i.text-success {
+    color: #28a745;
+}
+
+.card-body ul li i.text-warning {
+    color: #ffc107;
 }
 
 .card-body .btn {

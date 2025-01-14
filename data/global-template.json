@@ -7,7 +7,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Badges",
@@ -17,7 +19,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Blog",
@@ -27,7 +31,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Breadcrumbs",
@@ -37,7 +43,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Buttons",
@@ -47,7 +55,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Carousel",
@@ -57,7 +67,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Cheatsheet",
@@ -67,7 +79,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Checkout",
@@ -77,7 +91,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Cover",
@@ -87,7 +103,9 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 950,
+        "stars": 4.0
     },
     {
         "title": "Dashboard",
@@ -97,6 +115,8 @@
         "compatibleBrowsers": "Chrome, Firefox, Safari, Edge",
         "technologies": "HTML, CSS (SCSS), JS",
         "dependencies": "Bootstrap",
-        "responsive": true
+        "responsive": true,
+        "downloads": 90,
+        "stars": 4.0
     }
 ]
