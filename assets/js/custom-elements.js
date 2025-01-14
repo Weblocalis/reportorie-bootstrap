@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  // Charger les composants
+  // Charger les composants existants
   loadHTML('#header-container', 'components/header.html');
   loadHTML('#about-container', 'components/about.html');
   loadHTML('#footer-container', 'components/footer.html');
+
+  // Charger la section newsletter
+  loadHTML('#newsletter-container', 'components/newsletter.html');
 });
