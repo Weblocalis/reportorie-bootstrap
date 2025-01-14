@@ -1,35 +1,24 @@
-// Définir le Custom Element pour le header
-class AppHeader extends HTMLElement {
-    connectedCallback() {
-        fetch('../components/header.html') // Chemin corrigé
-            .then(response => response.text())
-            .then(html => {
-                this.innerHTML = html;
-            });
-    }
-}
-customElements.define('app-header', AppHeader);
+document.addEventListener('DOMContentLoaded', () => {
+  const loadHTML = (selector, filePath, callback) => {
+    fetch(filePath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Erreur lors du chargement de ${filePath}: ${response.statusText}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.querySelector(selector).innerHTML = data;
+        if (callback) callback();
+      })
+      .catch(error => {
+        console.error(`Erreur: ${error.message}`);
+        document.querySelector(selector).innerHTML = `<p style="color: red;">Erreur lors du chargement de ${filePath}.</p>`;
+      });
+  };
 
-// Définir le Custom Element pour le footer
-class AppFooter extends HTMLElement {
-    connectedCallback() {
-        fetch('../components/footer.html') // Chemin corrigé
-            .then(response => response.text())
-            .then(html => {
-                this.innerHTML = html;
-            });
-    }
-}
-customElements.define('app-footer', AppFooter);
-
-// Définir le Custom Element pour la section "À propos"
-class AppAbout extends HTMLElement {
-    connectedCallback() {
-        fetch('../components/about.html') // Chemin corrigé
-            .then(response => response.text())
-            .then(html => {
-                this.innerHTML = html;
-            });
-    }
-}
-customElements.define('app-about', AppAbout);
+  // Charger les composants
+  loadHTML('#header-container', 'components/header.html');
+  loadHTML('#about-container', 'components/about.html');
+  loadHTML('#footer-container', 'components/footer.html');
+});
