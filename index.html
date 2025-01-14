@@ -15,6 +15,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+      #about {
+    background-color: #f9f9f9;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#about .btn {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+}
+
+#about .btn:hover {
+    background-color: #0056b3;
+}
+
+#about .img-fluid {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
       body {
     font-family: 'Roboto', sans-serif;
 }
@@ -168,64 +199,8 @@
 </head>
 <body>
     <!-- Navbar -->
+    <app-header></app-header>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="/">
-      <img src="assets/brand/bootstrap-logo.svg" alt="Logo" width="auto" height="30" class="d-inline-block align-text-top">
-    </a>
-    
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" 
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Basculer la navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-
-
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house"></i> Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#template-gallery"><i class="bi bi-download"></i> Téléchargements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#templateModal"><i class="bi bi-image"></i> Aperçus</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer"><i class="bi bi-envelope"></i> Contact</a>
-        </li>
-      </ul>
-      <form class="search-form d-none d-flex">
-        <input class="form-control me-2 rounded-pill" type="search" placeholder="Rechercher" aria-label="Search">
-        <button class="btn btn-primary rounded-pill" type="submit">Rechercher</button>
-      </form>
-      <button class="search-toggle btn btn-light" aria-label="Afficher ou masquer la recherche"><i class="bi bi-search"></i></button>
-    </div>
-  </div>
-</nav>    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- Header -->
-    <header class="bg-primary text-white text-center py-5" style="background-image: url('assets/images/header-bg.jpg'); background-size: cover; background-position: center;">
-    <h1 class="display-4 fw-bold">Téléchargez Gratuitement les Meilleurs Templates Bootstrap</h1>
-    <p class="lead">Découvrez et téléchargez nos templates Bootstrap gratuits</p>
-    <a href="#template-gallery" class="btn btn-lg btn-light text-primary mt-3">Voir les templates</a>
-</header>
-
-    <!-- Contenu principal -->
-    
-    <!-- 
-<h2>Templates Bootstrap pour Portfolios</h2>
-<h2>Templates Bootstrap pour Blogs</h2>
-<h3>Pourquoi choisir nos modèles Bootstrap ?</h3> -->
     <main>
         <div class="container mt-5">
 <p>Nos <strong>templates Bootstrap gratuits</strong> sont entièrement <strong>responsives</strong>, conçus pour offrir une expérience utilisateur optimale et compatibles avec Bootstrap 5.</p>          
@@ -250,25 +225,36 @@
 </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 - Ton Nom | Tous droits réservés.</p>
-    </footer>
+
+
+<!-- Section about-->
+<app-about></app-about>
+
+
+
+<!-- Footer -->
+<div class="container">
+<app-footer></app-footer>
+</div>
+
+
+
+
 
 
 <script>
  // Liste des templates disponibles
 const templates = [
-    { title: "Album", url: "templates/album/index.html", thumbnail: "assets/images/album.jpg" },
-    { title: "Badges", url: "templates/badges/index.html", thumbnail: "assets/images/badges.jpg" },
-    { title: "Blog", url: "templates/blog/index.html", thumbnail: "assets/images/blog.jpg" },
-    { title: "Breadcrumbs", url: "templates/breadcrumbs/index-template.html", thumbnail: "assets/images/breadcrumbs.jpg" },
-    { title: "Buttons", url: "templates/buttons/index.html", thumbnail: "assets/images/buttons.jpg" },
-    { title: "Carousel", url: "templates/carousel/index.html", thumbnail: "assets/images/carousel.jpg" },
-    { title: "Cheatsheet", url: "templates/cheatsheet/index.html", thumbnail: "assets/images/cheatsheet.jpg" },
-    { title: "Checkout", url: "templates/checkout/index.html", thumbnail: "assets/images/checkout.jpg" },
-    { title: "Cover", url: "templates/cover/index.html", thumbnail: "assets/images/cover.jpg" },
-    { title: "Dashboard", url: "templates/dashboard/index.html", thumbnail: "assets/images/dashboard.jpg" },
+    { title: "Album", url: "templates/album/index.html", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJwUeV3aciZ3h38ZOfCXvSMqupXqEu3qyyPg&s" },
+    { title: "Badges", url: "templates/badges/index.html", thumbnail: "https://bootstrapmade.com/content/templatefiles/iLanding/iLanding-bootstrap-website-template-md.webp" },
+    { title: "Blog", url: "templates/blog/index.html", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREnDmgT96c8oEf-GyugfGHX1TuDXm06EmmkA&usqp=CAU" },
+    { title: "Breadcrumbs", url: "templates/breadcrumbs/index-template.html", thumbnail: "https://lh6.googleusercontent.com/proxy/QIlvPbMK8vLKIDyba4UhNKVKBuopx46P51P8UliQvnAoTN0ddogX6xa0-oGwNX_PJ9iUn-rlql_YBQfKuYQsT_geC6gFUBBYxWzA-plON8moDgKaV_vzCedJxQ" },
+    { title: "Buttons", url: "templates/buttons/index.html", thumbnail: "https://wrapmarketusercontent.com/assets/items/thumb/feee108613b62355c01ef552ec5260e140901153eff68bb2bc83a9cccffa0d10.webp?v=1712607019" },
+    { title: "Carousel", url: "templates/carousel/index.html", thumbnail: "https://themefisher.com/blog-thumb/free-bootstrap-templates-for-responsive-html5-website-like-corporate-tech-wedding-real-estate-magazine-and-more.webp" },
+    { title: "Cheatsheet", url: "templates/cheatsheet/index.html", thumbnail: "https://s.tmimgcdn.com/scr/800x500/51600/modele-de-site-web-gratuit-bootstrap-template_51613-0-original.jpg" },
+    { title: "Checkout", url: "templates/checkout/index.html", thumbnail: "https://wrapmarketusercontent.com/assets/items/thumb/8726255f8900b72f6ef9efa6c340a2d9fd8ce14ca34b2ec43181629cd1d9f1fc.webp?v=1733824551" },
+    { title: "Cover", url: "templates/cover/index.html", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHi2uqXHd0HGtV7JuF3mPl3B6_WMfJBII8CA&s" },
+    { title: "Dashboard", url: "templates/dashboard/index.html", thumbnail: "https://content.graygrids.com/wp-content/uploads/2018/09/graygrids.jpg" },
 ];
 
 // Générer les cartes
@@ -312,6 +298,6 @@ function previewTemplate(url) {
 </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/custom-elements.js" defer></script>
 </body>
 </html>
