@@ -1,20 +1,18 @@
+:root {
+    --primary-color: #6f42c1; /* Violet, similaire au logo Bootstrap */
+    --success-color: #28a745; /* Vert pour le succès */
+    --warning-color: #ffc107; /* Jaune pour les alertes */
+    --danger-color: #dc3545; /* Rouge pour les erreurs */
+    --info-color: #6610f2; /* Violet clair pour les informations */
+}
+
+
 /* Général */
 body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Images placeholder */
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    user-select: none;
-}
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
 
 /* Diviseurs */
 .b-example-divider {
@@ -102,13 +100,19 @@ body {
     transform: rotate(90deg);
 }
 
+
+
+
 /* Cartes */
 .card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -120,12 +124,35 @@ body {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+.card-body ul {
+    max-height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.card-body ul li {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.card-body ul li strong {
+    color: #333;
+}
+
+.card-body .btn {
+    font-size: 0.875rem;
+}
+
+
+
 
 /* Section "À propos" */
-#about {
-    background-color: #f9f9f9;
+#about { 
     padding: 50px 15px;
 }
+
 
 #about h2 {
     font-size: 2.5rem;
@@ -136,17 +163,6 @@ body {
 #about p {
     font-size: 1.1rem;
     color: #555;
-}
-
-#about .btn {
-    background-color: #007bff;
-    color: #fff;
-    transition: background-color 0.3s ease;
-    border-radius: 50px;
-}
-
-#about .btn:hover {
-    background-color: #0056b3;
 }
 
 #about .img-fluid {
@@ -183,33 +199,6 @@ body {
     }
 }
 
-.card-body ul {
-    padding: 0;
-    margin: 0 0 10px;
-}
-
-.card-body ul li {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.card-body ul li strong {
-    color: #333;
-}
-
-.card-body .btn {
-    font-size: 0.875rem;
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -217,26 +206,30 @@ body {
     padding: 0;
     margin: 10px 0;
 }
-
 .list-unstyled li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     font-size: 0.9rem;
     color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    transition: transform 0.2s ease-in-out;
 }
+
+
 
 .list-unstyled li i {
+    color: var(--primary-color);
     font-size: 1.2rem;
     margin-right: 8px;
+    transition: transform 0.2s ease-in-out;
 }
-
 .list-unstyled li strong {
     margin-left: 5px;
     color: #333;
     font-weight: 600;
 }
-
 /* Effets pour les icônes */
 .list-unstyled li i.text-primary {
     color: #007bff;
@@ -257,10 +250,11 @@ body {
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
+
 .list-unstyled li i:hover {
     transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
 }
+
 @media (min-width: 768px) {
     .list-unstyled {
         display: grid;
@@ -271,66 +265,28 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .badge {
     font-size: 0.75rem;
     padding: 0.5em 0.75em;
     border-radius: 10px;
     text-transform: uppercase;
 }
-
-
-
-
-
-
-
-
-
-.card-body ul {
-    max-height: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.badge.bg-success {
+    background-color: var(--success-color);
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-.card {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.btn-primary {
+    background-color: var(--primary-color); /* Fond violet */
+    border-color: #6f42c1; /* Bordure violette */
+    color: #fff; /* Texte blanc */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.btn-primary:hover {
+    background-color: #5a34a0; /* Fond violet foncé au survol */
+    border-color: #5a34a0; /* Bordure foncée au survol */
 }
