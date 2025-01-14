@@ -6,14 +6,11 @@
     <meta name="description" content="Téléchargez gratuitement des templates Bootstrap modernes, responsives et prêts à l'emploi. Trouvez des modèles pour portfolios, blogs, landing pages et plus encore.">
     <meta name="keywords" content="templates Bootstrap, HTML gratuits, téléchargements">
     <meta name="author" content="Ton Nom">
-    <title>Templates Bootstrap Gratuits | Téléchargez les Meilleurs Modèles Responsives</title>
-  
+    <title>Templates Bootstrap Gratuits | Téléchargez les Meilleurs Modèles Responsives</title> 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/css/styles.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    
+<link href="assets/css/styles.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
 </head>
 <body>
     <div id="header-container"></div>
@@ -43,94 +40,33 @@
 
 
 
-<!-- Conteneur pour la section "À propos" -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Three columns of text below the carousel -->
+    
+
+
+
+
+
+
+
 <div id="about-container"></div>
-
 <div id="newsletter-container"></div>
-
-
-<!-- Conteneur du footer -->
 <div id="footer-container"></div>
 
-
-
-
-
-
-<script>
- // Liste des templates disponibles
-const templates = [
-    { title: "Album", url: "templates/album/index.html", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJwUeV3aciZ3h38ZOfCXvSMqupXqEu3qyyPg&s" },
-    { title: "Badges", url: "templates/badges/index.html", thumbnail: "https://bootstrapmade.com/content/templatefiles/iLanding/iLanding-bootstrap-website-template-md.webp" },
-    { title: "Blog", url: "templates/blog/index.html", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREnDmgT96c8oEf-GyugfGHX1TuDXm06EmmkA&usqp=CAU" },
-    { title: "Breadcrumbs", url: "templates/breadcrumbs/index-template.html", thumbnail: "https://lh6.googleusercontent.com/proxy/QIlvPbMK8vLKIDyba4UhNKVKBuopx46P51P8UliQvnAoTN0ddogX6xa0-oGwNX_PJ9iUn-rlql_YBQfKuYQsT_geC6gFUBBYxWzA-plON8moDgKaV_vzCedJxQ" },
-    { title: "Buttons", url: "templates/buttons/index.html", thumbnail: "https://wrapmarketusercontent.com/assets/items/thumb/feee108613b62355c01ef552ec5260e140901153eff68bb2bc83a9cccffa0d10.webp?v=1712607019" },
-    { title: "Carousel", url: "templates/carousel/index.html", thumbnail: "https://themefisher.com/blog-thumb/free-bootstrap-templates-for-responsive-html5-website-like-corporate-tech-wedding-real-estate-magazine-and-more.webp" },
-    { title: "Cheatsheet", url: "templates/cheatsheet/index.html", thumbnail: "https://s.tmimgcdn.com/scr/800x500/51600/modele-de-site-web-gratuit-bootstrap-template_51613-0-original.jpg" },
-    { title: "Checkout", url: "templates/checkout/index.html", thumbnail: "https://wrapmarketusercontent.com/assets/items/thumb/8726255f8900b72f6ef9efa6c340a2d9fd8ce14ca34b2ec43181629cd1d9f1fc.webp?v=1733824551" },
-    { title: "Cover", url: "templates/cover/index.html", thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHi2uqXHd0HGtV7JuF3mPl3B6_WMfJBII8CA&s" },
-    { title: "Dashboard", url: "templates/dashboard/index.html", thumbnail: "https://content.graygrids.com/wp-content/uploads/2018/09/graygrids.jpg" },
-];
-
-// Générer les cartes
-const gallery = document.getElementById("template-gallery");
-
-templates.forEach(template => {
-    const card = document.createElement("div");
-    card.className = "col-md-4 mb-4";
-
-    card.innerHTML = `
-        <div class="card h-100 shadow-sm">
-            <img src="${template.thumbnail}" class="card-img-top" alt="${template.title}">
-            <div class="card-body">
-                <h5 class="card-title">${template.title}</h5>
-                <p class="card-text">Découvrez le template ${template.title}.</p>
-                <a href="${template.url}" target="_blank" class="btn btn-primary">Voir</a>
-                <button class="btn btn-secondary" aria-label="Aperçu du template ${template.title}" onclick="previewTemplate('${template.url}')">Aperçu</button>
-            </div>
-        </div>
-    `;
-    gallery.appendChild(card);
-});
-
-// Fonction pour afficher un aperçu dans la modale
-function previewTemplate(url) {
-    const iframe = document.getElementById("templatePreview");
-    iframe.src = url;
-    const modal = new bootstrap.Modal(document.getElementById("templateModal"));
-    modal.show();
-}
-</script>
-<script>
-  // Sélectionner le bouton et le champ de recherche
-  const searchToggle = document.querySelector('.search-toggle');
-  const searchForm = document.querySelector('.search-form');
-
-  // Ajouter un comportement au clic
-  searchToggle.addEventListener('click', () => {
-      searchForm.classList.toggle('d-none'); // Affiche ou masque le champ de recherche
-  });
-  
-  
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>   
     <script src="assets/js/custom-elements.js"></script>
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
+    <script src="assets/js/global.js"></script>
 </body>
 </html>
