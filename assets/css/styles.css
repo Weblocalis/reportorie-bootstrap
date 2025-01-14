@@ -1,0 +1,180 @@
+#about {
+    background-color: #f9f9f9;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#about .btn {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+}
+
+#about .btn:hover {
+    background-color: #0056b3;
+}
+
+#about .img-fluid {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+      body {
+    font-family: 'Roboto', sans-serif;
+}
+      .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+      .navbar-collapse {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: top;
+}
+.navbar-collapse.collapsing {
+  transform: scaleY(0.7);
+}
+.navbar-collapse.show {
+  transform: scaleY(1);
+}
+      .card img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transform: scale(1.05); /* Zoom léger */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre */
+}
+      /* Navbar : transition et modernisation */
+.navbar {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar .nav-link {
+    position: relative;
+    overflow: hidden;
+}
+.navbar .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+.navbar .nav-link:hover::before {
+    transform: translateX(0);
+}
+
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-link {
+  margin-right: 15px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+  color: #007bff; /* Couleur de surbrillance au survol */
+}
+
+.navbar .nav-link i {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+/* Style pour les boutons */
+.navbar .btn {
+  transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+  background-color: #0056b3; /* Couleur plus sombre au survol */
+}
+
+/* Mobile : ajustement */
+@media (max-width: 991px) {
+  .navbar .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+.navbar .nav-link {
+    position: relative;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.navbar.sticky-top {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+.search-form {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .navbar-brand img {
+        height: 25px;
+    }
+}
+
+.navbar-toggler-icon {
+    transition: transform 0.3s ease;
+}
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    transform: rotate(90deg);
+}
