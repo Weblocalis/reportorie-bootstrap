@@ -1,52 +1,110 @@
-<footer class="container">
-  <div class="row">
-    <!-- Section Navigation Dynamique -->
-    <div class="col-6 col-md-4 mb-3">
-      <h5>Produits</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accueil</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Caractéristiques</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tarifs</a></li>
-      </ul>
+<footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+  <h4>Abonnez-vous à notre Newsletter</h4>
+  <p>Inscrivez-vous pour recevoir les dernières actualités sur nos produits et services !</p>
+  <form action="forms/newsletter.php" method="post" class="php-email-form">
+    <div class="newsletter-form">
+      <input type="email" name="email" placeholder="Votre adresse email" required>
+      <input type="submit" value="S'abonner">
+    </div>
+    <div class="loading">Chargement...</div>
+    <div class="error-message">Une erreur s'est produite. Veuillez réessayer.</div>
+    <div class="sent-message">Votre demande d'abonnement a été envoyée. Merci !</div>
+  </form>
+</div>
+        </div>
+      </div>
     </div>
 
-    <div class="col-6 col-md-4 mb-3">
-      <h5>Support</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Politique de confidentialité</a></li>
-      </ul>
-    </div>
+    <div class="container footer-top">
+      <div class="row gy-4">
 
-    <div class="col-6 col-md-4 mb-3">
-      <h5>À propos</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Notre histoire</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Équipe</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Carrières</a></li>
-      </ul>
-    </div>
+
+
+<div class="col-lg-4 col-md-6 footer-about">
+  <a href="index.html" class="d-flex align-items-center">
+    <span class="sitename">FlexStart</span>
+  </a>
+  <div class="footer-contact pt-3">
+    <p>108 Rue Adam</p>
+    <p>Paris, FR 75001</p>
+    <p class="mt-3"><strong>Téléphone :</strong> <span>+33 1 23 45 67 89</span></p>
+    <p><strong>Email :</strong> <span>contact@flexstart.com</span></p>
   </div>
-  
-  
-  
- <div class="col-md-4">
-  <h5>Suivez-nous</h5>
-  <ul class="list-unstyled d-flex">
-    <li class="ms-3"><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter"></i></a></li>
-    <li class="ms-3"><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
-    <li class="ms-3"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
-    <li class="ms-3"><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
-    <li class="ms-3"><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a></li>
+</div>
+
+        
+
+
+
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>Liens Utiles</h4>
+  <ul>
+    <li><i class="bi bi-chevron-right"></i> <a href="#home">Accueil</a></li>
+    <li><i class="bi bi-chevron-right"></i> <a href="#about">À propos</a></li>
+    <li><i class="bi bi-chevron-right"></i> <a href="#services">Services</a></li>
+    <li><i class="bi bi-chevron-right"></i> <a href="#terms">Conditions d'utilisation</a></li>
   </ul>
-</div> 
+</div>
 
 
 
-  <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-    <p>&copy; <span id="current-year"></span> Company, Inc. Tous droits réservés.</p>
 
+        
+
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>Nos Services</h4>
+  <ul>
+    <li><i class="bi bi-chevron-right"></i> <a href="#web-design">Conception Web</a></li>
+    <li><i class="bi bi-chevron-right"></i> <a href="#web-development">Développement Web</a></li>
+    <li><i class="bi bi-chevron-right"></i> <a href="#product-management">Gestion de Produits</a></li>
+    <li><i class="bi bi-chevron-right"></i> <a href="#marketing">Marketing Digital</a></li>
+  </ul>
+</div>
+
+
+
+        
+
+<div class="col-lg-4 col-md-12">
+  <h4>Suivez-nous</h4>
+  <p>Restez connecté avec nous pour découvrir nos dernières nouveautés, conseils et inspirations.</p>
+  <div class="social-links d-flex">
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+      <i class="bi bi-twitter"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="bi bi-linkedin"></i>
+    </a>
   </div>
-  
-  
+</div>
+
+      </div>
+    </div>
+
+<div class="container copyright text-center mt-4">
+  <p>© 2019 - <span id="current-year"></span> <strong class="px-1 sitename">FlexStart</strong> - Tous droits réservés.</p>
+  <div class="credits">
+    <!-- Les liens dans le footer doivent rester intacts sauf achat de la version pro -->
+    <!-- Informations sur la licence : https://bootstrapmade.com/license/ -->
+    <!-- Achat de la version pro : [buy-url] -->
+    Créé avec passion par 
+    <a href="https://bootstrapmade.com/" rel="noopener noreferrer" target="_blank" aria-label="Visitez le site BootstrapMade">BootstrapMade</a> 
+    et distribué par 
+    <a href="https://themewagon.com" rel="noopener noreferrer" target="_blank" aria-label="Visitez le site ThemeWagon">ThemeWagon</a>.
+  </div>
+</div>
+
+
+
+  </footer>

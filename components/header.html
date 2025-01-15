@@ -1,64 +1,71 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="/">
-      <img src="assets/brand/bootstrap-logo.svg" alt="Logo" width="auto" height="30" class="d-inline-block align-text-top">
-    </a>
-    
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" 
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Basculer la navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">FlexStart</h1>
+      </a>
 
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/"><i class="bi bi-house"></i> Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#template-gallery"><i class="bi bi-download"></i> Téléchargements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#templateModal"><i class="bi bi-image"></i> Aperçus</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer"><i class="bi bi-envelope"></i> Contact</a>
-        </li>
-      </ul>
-      <form class="search-form d-none d-flex">
-        <input class="form-control me-2 rounded-pill" type="search" placeholder="Rechercher" aria-label="Search">
-        <button class="btn btn-primary rounded-pill" type="submit">Rechercher</button>
-      </form>
-      <button class="search-toggle btn btn-light" aria-label="Afficher ou masquer la recherche"><i class="bi bi-search"></i></button>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li class="listing-dropdown"><a href="#"><span>Listing Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li>
+                <a href="#">Column 1 link 1</a>
+                <a href="#">Column 1 link 2</a>
+                <a href="#">Column 1 link 3</a>
+              </li>
+              <li>
+                <a href="#">Column 2 link 1</a>
+                <a href="#">Column 2 link 2</a>
+                <a href="#">Column 3 link 3</a>
+              </li>
+              <li>
+                <a href="#">Column 3 link 1</a>
+                <a href="#">Column 3 link 2</a>
+                <a href="#">Column 3 link 3</a>
+              </li>
+              <li>
+                <a href="#">Column 4 link 1</a>
+                <a href="#">Column 4 link 2</a>
+                <a href="#">Column 4 link 3</a>
+              </li>
+              <li>
+                <a href="#">Column 5 link 1</a>
+                <a href="#">Column 5 link 2</a>
+                <a href="#">Column 5 link 3</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Commencer</a>
     </div>
-  </div>
-</nav>    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- Header -->
-    <header class="bg-dark py-5">
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center justify-content-center">
-            <div class="col-lg-8 col-xl-7 col-xxl-6">
-                <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Explorez et Téléchargez des Templates Bootstrap Gratuits</h1>
-                    <p class="lead fw-normal text-white-50 mb-4">Découvrez une collection de templates modernes, responsives et adaptés à tous vos projets web. Gratuitement.</p>
-                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#template-gallery">Voir les templates</a>
-                        <a class="btn btn-outline-light btn-lg px-4" href="#learn-more">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                <img class="img-fluid rounded-3 my-5" src="assets/images/header-illustration.png" alt="Illustration des templates Bootstrap" />
-            </div>
-        </div>
-    </div>
-</header>
+  </header>
