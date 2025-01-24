@@ -946,16 +946,27 @@ section,
 }
 
 .about .content h3 {
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 700;
   color: var(--accent-color);
   text-transform: uppercase;
 }
 
 .about .content h2 {
-  font-size: 24px;
+  font-size: 1em;
   font-weight: 700;
 }
+@media (max-width: 768px) {
+    .about .content h3 {
+        font-size: 0.9em; /* Réduction de la taille pour mobile */
+    }
+
+    .about .content h2 {
+        font-size: 0.9em; /* Réduction de la taille pour mobile */
+    }
+}
+
+
 
 .about .content p {
   margin: 15px 0 30px 0;
