@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <button class="btn btn-primary btn-preview" data-url="${template.url}" data-bs-toggle="modal" data-bs-target="#templateModal">
                                     Aperçu
                                 </button>
-                                <a href="${template.url}" class="btn btn-secondary" target="_blank">Télécharger</a>
+                                <a href="${template.downloadUrl}" class="btn btn-secondary" target="_blank">Télécharger</a>
                             </div>
                         </div>
                     </div>
