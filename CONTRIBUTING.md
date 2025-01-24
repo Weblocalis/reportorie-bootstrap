@@ -52,7 +52,7 @@ Ajoutez des tags aux issues pour les rendre attrayantes et accessibles :
 
 ### **7. Ajouter une Licence**
 Ajoutez une licence ouverte comme MIT pour encourager les contributions :
-```plaintext
-MIT License
+
+### MIT License
 Copyright (c) [année] [votre nom ou entreprise]
 Permission is hereby granted, free of charge, to any person obtaining a copy...
